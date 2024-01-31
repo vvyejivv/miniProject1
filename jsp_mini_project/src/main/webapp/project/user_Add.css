@@ -1,0 +1,124 @@
+ @charset "UTF-8";
+ @font-face {
+ 	font-family: 'maple';
+ 	src: url(../miniProject/font/Maplestory_Light.ttf)
+ }
+
+ * {
+ 	font-family: 'maple';
+ }
+
+ body {
+ 	font-family: Arial, sans-serif;
+ 	margin: 0;
+ 	padding: 0;
+ 	background-color: #f4f4f4;
+ }
+
+ .signupContainer {
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	height: 100vh;
+ }
+
+ /* 회원가입 박스 */
+ .signupBox {
+ 	background-color: #fff;
+ 	padding: 20px;
+ 	border-radius: 10px;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 	width: 600px;
+ 	text-align: center;
+ 	position: relative;
+ }
+
+ .signupBox h2 {
+ 	color: #FF5EA7;
+ }
+
+ .signupBox form {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ 	margin-top: 20px;
+ }
+
+ .signupBox div {
+ 	margin-bottom: 15px;
+ }
+
+ .inLineBox {
+ 	display: flex;
+ 	align-items: center;
+ 	margin-bottom: 15px;
+ }
+
+ /* 핸드폰 번호 입력 텍스트 스타일 */
+ .phone {
+ 	width: calc(15.33% - 1px);
+ 	/* 33.33%로 설정하고 간격을 빼줍니다. */
+ 	margin-right: 2px;
+ 	/* 간격 조절 */
+ 	padding: 10px;
+ 	margin-bottom: 15px;
+ 	border: 1px solid #ddd;
+ 	border-radius: 5px;
+ }
+
+ /* 중복확인 버튼 */
+ .checkBtn {
+ 	width: 100px;
+ 	padding: 10px;
+ 	background-color: #FF5EA7;
+ 	color: #fff;
+ 	border: none;
+ 	border-radius: 5px;
+ 	cursor: pointer;
+ 	transition: background-color 0.3s ease;
+ 	position: absolute;
+ 	left: 480px;
+ 	bottom: 788px;
+ }
+
+ /* 가입하기 버튼 */
+ .addBtn {
+ 	width: 300px;
+ 	padding: 20px;
+ 	background-color: #FF5EA7;
+ 	color: #fff;
+ 	border: none;
+ 	border-radius: 5px;
+ 	cursor: pointer;
+ 	transition: background-color 0.3s ease;
+ 	font-size: 20px;
+ }
+
+ .addBtn:hover {
+ 	background-color: #ca5188;
+ }
+
+ /* 이미 계정~ */
+ .signupBox p {
+ 	margin-top: 15px;
+ 	color: #777;
+ }
+
+ a {
+ 	color: #FF5EA7;
+ }
+
+ /* 추가된 스타일 */
+ .textBox1 {
+ 	width: 250px;
+ 	padding: 10px;
+ 	margin: 5px 0;
+ 	border: 1px solid #ddd;
+ 	border-radius: 5px;
+ 	box-sizing: border-box;
+ }
+
+ /* 라디오 버튼 스타일 */
+ input[type="radio"] {
+ 	margin-right: 5px;
+ }

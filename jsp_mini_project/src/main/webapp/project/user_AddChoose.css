@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'maple';
+	src: url(../miniProject/font/Maplestory_Light.ttf)
+}
+
+* {
+	font-family: 'maple';
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.signupContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.signupButton {
+	width: 350px;
+	margin: 0 10px;
+	padding: 15px 10px;
+	font-size: 30px;
+	cursor: pointer;
+	border: none;
+	background-color: #FF5EA7;
+	color: #fff;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.signupButton:hover {
+	background-color: #ca5188;
+}
+
+.signupBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 700px;
+	height: 400px;
+	text-align: center;
+}
+
+.signupButtonWrapper {
+	margin: 10px 0;
+}
+
+.loginText {
+	margin-top: 20px;
+}
+
+a {
+	color: #FF5EA7;
+}
