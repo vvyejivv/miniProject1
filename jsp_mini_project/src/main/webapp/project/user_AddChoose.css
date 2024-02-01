@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-@font-face {
-	font-family: 'maple';
-	src: url(../miniProject/font/Maplestory_Light.ttf)
-}
+ @font-face {
+ 	font-family: 'maple';
+ 	src: url(font/Maplestory_Light.ttf)
+ }
 
-* {
-	font-family: 'maple';
-}
+ * {
+ 	font-family: 'maple';
+ }
 
 body {
 	margin: 0;
