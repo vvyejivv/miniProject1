@@ -11,10 +11,10 @@
     <div class="signupContainer">
         <div class="signupBox">
             <div class="signupButtonWrapper">
-                <button class="signupButton" onclick="csmUsr_Add(2)">개인회원</button>
+                <button class="signupButton" onclick="userUsr_Add(2)">개인회원</button>
             </div>
             <div class="signupButtonWrapper">
-                <button class="signupButton" onclick="scmUser_Add(1)">업체회원</button>
+                <button class="signupButton" onclick="userUser_Add(1)">업체회원</button>
             </div>
             <div class="loginText">이미 계정이 있으신가요? <a href="6_user_Login_DB.jsp">로그인</a></div>
         </div>
@@ -23,10 +23,10 @@
 
 </html>
 <script>
-	function csmUsr_Add(code){
+	function userUsr_Add(code){
 		location.href="4_csm_User_Add.jsp?code="+code;
 	}
-	function scmUser_Add(code){
+	function userUser_Add(code){
 		location.href="3_scm_User_Add.jsp?code="+code;
 	}
 </script>

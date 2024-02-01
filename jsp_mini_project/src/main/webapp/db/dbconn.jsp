@@ -16,7 +16,6 @@
 		conn = DriverManager.getConnection(db_url, db_id, db_pw);
 		stmt = conn.createStatement();	
 		
-		out.print("test");
 		
 %>
 </body>

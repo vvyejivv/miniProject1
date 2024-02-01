@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>홈화면</title>
 </head>
-<link rel="stylesheet" href="home.css" type="text/css" />
+<link rel="stylesheet" href="home.css?after" type="text/css" />
 <body>
 	<header>
 		<img src="image/logomimi.png" alt="로고" width="350px">
@@ -32,13 +32,13 @@
 						<h3>로그인</h3>
 
 					</div>
-					<form name="login_user">
-						<label for="username">아이디:</label> <input type="text"
-							id="username" name="username" required> <label
-							for="password">비밀번호:</label> <input type="password" id="password"
-							name="password" required> <input type="submit"
-							value="로그인" onclick="user_Login_DB()"> <input
-							type="button" value="회원가입" onclick="user_Add()">
+					<form name="login_user" action="6_user_Login_DB.jsp">
+						<label for="username">아이디:</label> 
+						<input type="text"id="user_Id" name="user_Id" required>
+						<label for="password">비밀번호:</label> 
+						<input type="password" id="user_Pw" name="user_Pw" required> 
+						<input type="submit" value="로그인"> 
+						<input type="button" value="회원가입" onclick="user_Add()">
 					</form>
 				</div>
 			</div>
@@ -90,7 +90,5 @@
 	function user_Add(){
 		location.href="2_user_Add_Choose.jsp";
 	}
-	function user_Login_DB(){
-		location.href="6_user_Login_DB.jsp";
-	}
+
 </script>

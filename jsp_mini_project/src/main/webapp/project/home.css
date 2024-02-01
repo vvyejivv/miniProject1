@@ -1,318 +1,321 @@
+ @charset "UTF-8";
+
  @font-face {
-        font-family: 'maple';
-        src: url(../miniProject/font/Maplestory_Light.ttf)
-    }
+ 	font-family: 'maple';
+ 	src: url(font/Maplestory_Light.ttf)
+ }
 
-    * {
-        font-family: 'maple';
-    }
+ * {
+ 	font-family: 'maple';
+ }
 
-    body {
-        /* font-family: Arial, sans-serif; */
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
+ body {
+ 	/* font-family: Arial, sans-serif; */
+ 	margin: 0;
+ 	padding: 0;
+ 	background-color: #f4f4f4;
+ }
 
-    header {
-        background-color: #fff;
-        text-align: center;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+ header {
+ 	background-color: #fff;
+ 	text-align: center;
+ 	padding: 20px;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
 
-    header img {
-        max-width: 100%;
-        height: auto;
-    }
+ header img {
+ 	max-width: 100%;
+ 	height: auto;
+ }
 
-    section {
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        /* 이미지를 상대적으로 위치시키기 위해 추가 */
-        /* display: flex;
+ section {
+ 	padding: 20px;
+ 	text-align: center;
+ 	position: relative;
+ 	/* 이미지를 상대적으로 위치시키기 위해 추가 */
+ 	/* display: flex;
         flex-direction: column;
         align-items: center; */
-    }
+ }
 
-    .foodMenu-buttons {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center;
-    }
+ .foodMenu-buttons {
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ 	display: flex;
+ 	justify-content: center;
+ }
 
-    .foodMenu-buttons button {
-        width: 140px;
-        padding: 10px;
-        margin-right: 10px;
-        background-color: #FF5EA7;
-        color: #fff;
-        border: none;
-        border-radius: 24px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        /* 부드러운 전환을 위한 추가 */
-    }
+ .foodMenu-buttons button {
+ 	width: 140px;
+ 	padding: 10px;
+ 	margin-right: 10px;
+ 	background-color: #FF5EA7;
+ 	color: #fff;
+ 	border: none;
+ 	border-radius: 24px;
+ 	cursor: pointer;
+ 	transition: background-color 0.3s ease;
+ 	/* 부드러운 전환을 위한 추가 */
+ }
 
-    .foodMenu-buttons button:hover {
-        background-color: #ccc;
-    }
+ .foodMenu-buttons button:hover {
+ 	background-color: #ccc;
+ }
 
-    .serchBox {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+ .serchBox {
+ 	margin-top: 20px;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ }
 
-    .serchBox::placeholder {
-        text-align: center;
-    }
+ .serchBox::placeholder {
+ 	text-align: center;
+ }
 
 
-    input[type="text"] {
-        width: calc(680px - 10px);
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 24px;
-        margin-right: 10px;
-    }
+ input[type="text"] {
+ 	width: calc(680px - 10px);
+ 	padding: 10px;
+ 	border: 1px solid #ddd;
+ 	border-radius: 24px;
+ 	margin-right: 10px;
+ }
 
-    input[type="submit"],
-    input[type="button"] {
-        width: 90px;
-        padding: 10px;
-        background-color: #FF5EA7;
-        color: #fff;
-        border: none;
-        border-radius: 24px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        /* 부드러운 전환을 위한 추가 */
-    }
+ input[type="submit"],
+ input[type="button"] {
+ 	width: 90px;
+ 	padding: 10px;
+ 	background-color: #FF5EA7;
+ 	color: #fff;
+ 	border: none;
+ 	border-radius: 24px;
+ 	cursor: pointer;
+ 	transition: background-color 0.3s ease;
+ 	/* 부드러운 전환을 위한 추가 */
+ }
 
-    input[type="submit"]:hover {
-        background-color: #ccc;
-    }
+ input[type="submit"]:hover {
+ 	background-color: #ccc;
+ }
 
-    .loginBox {
-        margin-top: 2px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-    }
+ .loginBox {
+ 	margin-top: 2px;
+ 	background-color: #fff;
+ 	padding: 20px;
+ 	border-radius: 10px;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 	width: 200px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+ 	align-items: center;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	position: relative;
+ }
 
-    .loginBox h3 {
-        margin-bottom: 30px;
-        color: #FF5EA7;
-    }
+ .loginBox h3 {
+ 	margin-bottom: 30px;
+ 	color: #FF5EA7;
+ }
 
-    .loginBox form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+ .loginBox form {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
 
-    .loginBox label {
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
+ .loginBox label {
+ 	margin-bottom: 5px;
+ 	font-weight: bold;
+ }
 
-    .loginBox input[type="text"],
-    .loginBox input[type="password"],
-    .loginBox input[type="submit"],
-    .loginBox input[type="button"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
+ .loginBox input[type="text"],
+ .loginBox input[type="password"],
+ .loginBox input[type="submit"],
+ .loginBox input[type="button"] {
+ 	width: 100%;
+ 	padding: 10px;
+ 	margin-bottom: 10px;
+ 	border: 1px solid #ddd;
+ 	border-radius: 5px;
+ }
 
-    .loginBox input[type="submit"],
-    .loginBox input[type="button"] {
-        width: 200px;
-        padding: 10px;
-        background-color: #FF5EA7;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        /* 부드러운 전환을 위한 추가 */
-    }
+ .loginBox input[type="submit"],
+ .loginBox input[type="button"] {
+ 	width: 200px;
+ 	padding: 10px;
+ 	background-color: #FF5EA7;
+ 	color: #fff;
+ 	border: none;
+ 	border-radius: 5px;
+ 	cursor: pointer;
+ 	transition: background-color 0.3s ease;
+ 	/* 부드러운 전환을 위한 추가 */
+ }
 
-    .loginBox input[type="submit"]:hover,
-    .loginBox input[type="button"]:hover {
-        background-color: #ccc;
-    }
+ .loginBox input[type="submit"]:hover,
+ .loginBox input[type="button"]:hover {
+ 	background-color: #ccc;
+ }
 
-    .foodList {
-        padding: 5px;
-        max-width: 1020px;
-        height: 350px;
-        margin: 20px auto;
-        position: relative;
-    }
+ .foodList {
+ 	padding: 5px;
+ 	max-width: 1020px;
+ 	height: 350px;
+ 	margin: 20px auto;
+ 	position: relative;
+ }
 
-    .login {
-        position: absolute;
-        left: 790px;
-    }
+ .login {
+ 	position: absolute;
+ 	left: 790px;
+ }
 
-    .fl_Box1 {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
+ .fl_Box1 {
+ 	position: absolute;
+ 	top: 10px;
+ 	left: 10px;
+ }
 
-    .fl_Box2 {
-        position: absolute;
-        top: 10px;
-        left: 265px;
-    }
+ .fl_Box2 {
+ 	position: absolute;
+ 	top: 10px;
+ 	left: 265px;
+ }
 
-    .fl_Box3 {
-        position: absolute;
-        top: 10px;
-        left: 520px;
-    }
+ .fl_Box3 {
+ 	position: absolute;
+ 	top: 10px;
+ 	left: 520px;
+ }
 
-    .fl_Box4 {
-        position: absolute;
-        top: 180px;
-        left: 10px;
-    }
+ .fl_Box4 {
+ 	position: absolute;
+ 	top: 180px;
+ 	left: 10px;
+ }
 
-    .fl_Box5 {
-        position: absolute;
-        top: 180px;
-        left: 265px;
-    }
+ .fl_Box5 {
+ 	position: absolute;
+ 	top: 180px;
+ 	left: 265px;
+ }
 
-    .fl_Box6 {
-        position: absolute;
-        top: 180px;
-        left: 520px;
-    }
+ .fl_Box6 {
+ 	position: absolute;
+ 	top: 180px;
+ 	left: 520px;
+ }
 
-    .fl_Box1,
-    .fl_Box2,
-    .fl_Box3,
-    .fl_Box4,
-    .fl_Box5,
-    .fl_Box6 {
-        transition: transform 0.3s ease;
-        /* 변형 효과를 부드럽게 전환하는데 0.3초를 사용합니다. */
-        overflow: hidden;
-    }
+ .fl_Box1,
+ .fl_Box2,
+ .fl_Box3,
+ .fl_Box4,
+ .fl_Box5,
+ .fl_Box6 {
+ 	transition: transform 0.3s ease;
+ 	/* 변형 효과를 부드럽게 전환하는데 0.3초를 사용합니다. */
+ 	overflow: hidden;
+ }
 
-    .image-text {
-        position: absolute;
-        top: 50%;
-        /* 이미지 중앙에 위치시키기 위해 상단 50% 설정 */
-        left: 50%;
-        /* 이미지 중앙에 위치시키기 위해 좌측 50% 설정 */
-        transform: translate(-50%, -50%);
-        /* 이미지 중앙에 정렬 */
-        color: #fff;
-        /* 텍스트 색상 설정 */
-        font-size: 18px;
-        /* 텍스트 크기 설정 */
-        font-weight: bold;
-        /* 텍스트 굵기 설정 */
-        text-align: center;
-        /* 텍스트 가운데 정렬 */
-        opacity: 0;
-        /* 초기에는 투명하게 설정 */
-        transition: opacity 0.3s ease;
-        /* 투명도 변경 시 부드러운 전환을 위한 설정 */
-    }
+ .image-text {
+ 	position: absolute;
+ 	top: 50%;
+ 	/* 이미지 중앙에 위치시키기 위해 상단 50% 설정 */
+ 	left: 50%;
+ 	/* 이미지 중앙에 위치시키기 위해 좌측 50% 설정 */
+ 	transform: translate(-50%, -50%);
+ 	/* 이미지 중앙에 정렬 */
+ 	color: #fff;
+ 	/* 텍스트 색상 설정 */
+ 	font-size: 18px;
+ 	/* 텍스트 크기 설정 */
+ 	font-weight: bold;
+ 	/* 텍스트 굵기 설정 */
+ 	text-align: center;
+ 	/* 텍스트 가운데 정렬 */
+ 	opacity: 0;
+ 	/* 초기에는 투명하게 설정 */
+ 	transition: opacity 0.3s ease;
+ 	/* 투명도 변경 시 부드러운 전환을 위한 설정 */
+ }
 
-    .fl_Box1:hover .image-text,
-    .fl_Box2:hover .image-text,
-    .fl_Box3:hover .image-text,
-    .fl_Box4:hover .image-text,
-    .fl_Box5:hover .image-text,
-    .fl_Box6:hover .image-text {
-        opacity: 1;
-        /* 마우스 호버시 투명도를 1로 변경하여 텍스트가 나타나도록 함 */
-    }
+ .fl_Box1:hover .image-text,
+ .fl_Box2:hover .image-text,
+ .fl_Box3:hover .image-text,
+ .fl_Box4:hover .image-text,
+ .fl_Box5:hover .image-text,
+ .fl_Box6:hover .image-text {
+ 	opacity: 1;
+ 	/* 마우스 호버시 투명도를 1로 변경하여 텍스트가 나타나도록 함 */
+ }
 
-    /* 이미지에 대한 스타일 */
-    .fl_Box1 img,
-    .fl_Box2 img,
-    .fl_Box3 img,
-    .fl_Box4 img,
-    .fl_Box5 img,
-    .fl_Box6 img {
-        /* width: 100%; */
-        width: 250px;
-        /* 이미지가 부모 요소에 꽉 차도록 설정 */
-        height: auto;
-        /* 가로 비율 유지 */
-        display: block;
-        /* 호버 효과를 위한 transition 속성 추가 */
-        transition: filter 0.3s ease;
-    }
+ /* 이미지에 대한 스타일 */
+ .fl_Box1 img,
+ .fl_Box2 img,
+ .fl_Box3 img,
+ .fl_Box4 img,
+ .fl_Box5 img,
+ .fl_Box6 img {
+ 	/* width: 100%; */
+ 	width: 250px;
+ 	/* 이미지가 부모 요소에 꽉 차도록 설정 */
+ 	height: auto;
+ 	/* 가로 비율 유지 */
+ 	display: block;
+ 	/* 호버 효과를 위한 transition 속성 추가 */
+ 	transition: filter 0.3s ease;
+ }
 
-    /* 흐린 배경을 담을 추가적인 요소에 대한 스타일 */
-    .image-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 94, 167, 0.7);
-        /* 흐린 배경의 색상 및 투명도 설정 */
-        filter: blur(8px);
-        /* 흐림 효과를 주는 blur 필터 */
-        opacity: 0;
-        /* 초기에는 투명하게 설정 */
-        transition: opacity 0.3s ease;
-        /* 호버 효과를 위한 transition 속성 추가 */
-    }
+ /* 흐린 배경을 담을 추가적인 요소에 대한 스타일 */
+ .image-overlay {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	height: 100%;
+ 	background: rgba(255, 94, 167, 0.7);
+ 	/* 흐린 배경의 색상 및 투명도 설정 */
+ 	filter: blur(8px);
+ 	/* 흐림 효과를 주는 blur 필터 */
+ 	opacity: 0;
+ 	/* 초기에는 투명하게 설정 */
+ 	transition: opacity 0.3s ease;
+ 	/* 호버 효과를 위한 transition 속성 추가 */
+ }
 
-    .fl_Box1:hover img,
-    .fl_Box2:hover img,
-    .fl_Box3:hover img,
-    .fl_Box4:hover img,
-    .fl_Box5:hover img,
-    .fl_Box6:hover img {
-        filter: brightness(0.7);
-        /* 호버시 이미지를 약간 어둡게 표시 */
-    }
+ .fl_Box1:hover img,
+ .fl_Box2:hover img,
+ .fl_Box3:hover img,
+ .fl_Box4:hover img,
+ .fl_Box5:hover img,
+ .fl_Box6:hover img {
+ 	filter: brightness(0.7);
+ 	/* 호버시 이미지를 약간 어둡게 표시 */
+ }
 
-    /* 호버시 흐린 배경 표시 및 이미지 약간 어둡게 조정 */
-    .fl_Box1:hover .image-overlay,
-    .fl_Box2:hover .image-overlay,
-    .fl_Box3:hover .image-overlay,
-    .fl_Box4:hover .image-overlay,
-    .fl_Box5:hover .image-overlay,
-    .fl_Box6:hover .image-overlay {
-        opacity: 1;
-        /* 호버시 흐린 배경을 표시하기 위해 투명도 조정 */
-    }
-    .shop_List{
-        max-width: 1020px;
-        height: 300px;
-        background-color: yellow;
-    }
+ /* 호버시 흐린 배경 표시 및 이미지 약간 어둡게 조정 */
+ .fl_Box1:hover .image-overlay,
+ .fl_Box2:hover .image-overlay,
+ .fl_Box3:hover .image-overlay,
+ .fl_Box4:hover .image-overlay,
+ .fl_Box5:hover .image-overlay,
+ .fl_Box6:hover .image-overlay {
+ 	opacity: 1;
+ 	/* 호버시 흐린 배경을 표시하기 위해 투명도 조정 */
+ }
 
-    footer {
-        background-color: #fff;
-        text-align: center;
-        padding: 20px;
-        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    }
+ .shop_List {
+ 	max-width: 1020px;
+ 	height: 300px;
+ 	background-color: yellow;
+ }
+
+ footer {
+ 	background-color: #fff;
+ 	text-align: center;
+ 	padding: 20px;
+ 	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+ }
