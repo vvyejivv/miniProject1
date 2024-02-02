@@ -195,10 +195,11 @@
  }
 
  .shop_List {
- 	max-width: 1020px;
+ 	max-width:770px;
  	margin: 20px auto;
  	position: relative;
  	top: 350px;
+ 	left: -125px;
  }
 
  .shop_List table {

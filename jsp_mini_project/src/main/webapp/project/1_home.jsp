@@ -15,7 +15,9 @@
 		rs.next();
 	%>
 	<header>
+	<a href="1_home.jsp">	
 		<img src="image/logomimi.png" alt="로고" width="350px">
+	</a>
 		<div>
 		<% 
 		if(request.isRequestedSessionIdValid()){

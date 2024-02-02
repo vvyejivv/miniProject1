@@ -32,6 +32,7 @@
             <input type="button" value="닫기" onclick="popClose('<%=user_Id%>', '<%=code%>')">
         </div>
     </form>
+   <% conn.close(); %>
 </body>
 </html>
 <script>

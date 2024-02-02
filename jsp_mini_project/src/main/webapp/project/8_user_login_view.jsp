@@ -12,13 +12,16 @@
 <body>
 <%@ include file="dbconn.jsp"%>
 <%
-		String sql="SELECT * FROM KYJ_USER";
+		String user_Id = request.getParameter("user_Id");
+		String sql="SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";
 		ResultSet rs = stmt.executeQuery(sql);
 		rs.next();
-		
+		String code = rs.getString("CODE");
 %>
 <header>
-	<img src="image/logomimi.png" alt="로고" width="350px">
+			<a href="8_user_login_view.jsp">
+				<img src="image/logomimi.png" alt="로고" width="350px">
+			</a>
 			<div>
 		<% 
 		if(request.isRequestedSessionIdValid()){
@@ -53,10 +56,10 @@
 					<div class="profile">
                     <img src="image/remi.jpg">
                   	</div>
-                    <input type="button" value="주문내역" onclick="">
-                    <input type="button" value="작성한 리뷰" onclick="">
-                    <input type="button" value="내 정보 수정" onclick="">
-                    <input type="button" value="로그아웃" onclick="logOut()">
+                    <input type="button" value="주문내역" onclick="user_OrderList('<%=rs.getString("USER_ID")%>')">
+                    <input type="button" value="작성한 리뷰" onclick="user_Review('<%=rs.getString("USER_ID")%>')">
+                    <input type="button" value="내 정보 수정" onclick="user_Info_Update('<%=rs.getString("USER_ID")%>',<%=code%>)">
+                    <input type="button" value="로그아웃" onclick="user_LogOut()">
                     </form>
 				</div>
 			</div>
@@ -119,12 +122,27 @@
 
 	<p>&copy;</p>
 </footer> -->
-
+<% conn.close(); %>
 </body>
 
 </html>
 <script>
-	function logOut(){
-		location.href = "910_user_Logout.jsp";
+	/* 주문내역 */
+	function user_OrderList(user_Id){
+		location.href = "911_user_OrderList.jsp?user_Id="+user_Id;		
+	}
+	/* 내 정보 수정  */
+	function user_Info_Update(user_Id,code){
+		if(code == "1"){
+			location.href = "912_scm_Info_Update.jsp?user_Id="+user_Id+"&code="+code;			
+		}else{		
+			location.href = "913_csm_Info_Update.jsp?user_Id="+user_Id+"&code="+code;			
+		}
+	}
+	/* 로그아웃  */
+	function user_LogOut(){
+		if(confirm("로그아웃 하시겠습니까?")){
+		location.href = "910_user_Logout.jsp";			
+		}
 	}
 </script>

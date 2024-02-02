@@ -52,6 +52,7 @@
 
 	stmt.executeUpdate(sql); 
 	%>
+	<% conn.close(); %>
 </body>
 </html>
 <script>

@@ -9,12 +9,13 @@
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
-	
-
+	if(request.isRequestedSessionIdValid()){
+		session.invalidate();
+		}
 	%>
 </body>
 </html>
 <script>
-/* 	alert("로그아웃 되었습니다.");
-	location.href = "1_home.jsp"; */
+	alert("로그아웃 되었습니다.");
+	location.href = "1_home.jsp";
 </script>

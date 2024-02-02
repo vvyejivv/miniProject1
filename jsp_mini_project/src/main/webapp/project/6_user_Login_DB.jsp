@@ -75,5 +75,6 @@
             }
         }
     %>
+    <% conn.close(); %>
 </body>
 </html>
