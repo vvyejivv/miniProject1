@@ -10,17 +10,14 @@
 	<%@ include file="dbconn.jsp"%>
 	<%
 	String user_Id = request.getParameter("user_Id");
-	String sql = "SELECT * FROM KYJ_ORDER WHERE USER_ID = '" + user_Id + "'";
+	String sql = "SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";
 	ResultSet rs = stmt.executeQuery(sql);
-	
 	%>
 	<div class="order_List">
 		<table border="1">
-			<title>추천 가게</title>
 			<tr>
 				<td>NO</td>
-				<td>종류</td>
-				<td>상호명</td>
+				<td>주문자</td>
 				<td>메뉴</td>
 				<td>가격</td>
 				<td>주문날짜</td>
