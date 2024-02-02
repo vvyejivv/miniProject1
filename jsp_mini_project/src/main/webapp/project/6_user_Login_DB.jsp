@@ -35,12 +35,16 @@
                         window.location.href = "9_admin_view.jsp";
                     </script>
     <%
-                } else {
+                } else if(rs.getString("CODE").equals("1")) {
                     sql = "UPDATE KYJ_USER SET CNT = 0 WHERE USER_ID = '" + user_Id + "'";
                     stmt.executeUpdate(sql);
-                    
-                    response.sendRedirect("8_user_login_view.jsp?user_Id=" + user_Id);
+                    response.sendRedirect("8_scm_login_view.jsp?user_Id=" + user_Id);
+                }else{
+                	sql = "UPDATE KYJ_USER SET CNT = 0 WHERE USER_ID = '" + user_Id + "'";
+                    stmt.executeUpdate(sql);
+                    response.sendRedirect("8_csm_login_view.jsp?user_Id=" + user_Id);
                 }
+                
             }
         } else {
             String idSql = "SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";

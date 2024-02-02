@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 완료</title>
+<title>개인 회원 로그인 완료</title>
 </head>
 <link rel="stylesheet" href="home.css?after" type="text/css" />
 <body>

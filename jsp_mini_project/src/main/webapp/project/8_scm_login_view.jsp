@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 완료</title>
+<title>업체 로그인 완료</title>
 </head>
 <link rel="stylesheet" href="home.css?after" type="text/css" />
 <body>
@@ -56,8 +56,8 @@
 					<div class="profile">
                     <img src="image/remi.jpg">
                   	</div>
-                    <input type="button" value="주문내역" onclick="user_OrderList('<%=rs.getString("USER_ID")%>')">
-                    <input type="button" value="작성한 리뷰" onclick="user_Review('<%=rs.getString("USER_ID")%>')">
+                    <input type="button" value="주문받은내역" onclick="user_OrderList('<%=rs.getString("USER_ID")%>')">
+                    <input type="button" value="우리가게리뷰" onclick="user_Review('<%=rs.getString("USER_ID")%>')">
                     <input type="button" value="내 정보 수정" onclick="user_Info_Update('<%=rs.getString("USER_ID")%>',<%=code%>)">
                     <input type="button" value="로그아웃" onclick="user_LogOut()">
                     </form>
