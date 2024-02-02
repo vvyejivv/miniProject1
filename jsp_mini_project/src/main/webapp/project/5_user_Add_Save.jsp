@@ -25,12 +25,24 @@
 	String user_Code = request.getParameter("code");
 	String csm_Type = request.getParameter("csm_Type");
 	String scm_Type = request.getParameter("scm_Type");
+	String user_Date = request.getParameter("user_Date");
 
-	String sql = "INSERT INTO KYJ_USER VALUES('" + user_Id + "', '" + user_Pw + "', '" + user_Name + "', '" + user_NikName
-			+ "', '" + user_Phone + "', '" + user_Email + "', '" + user_Gender + "', '" + user_Address + "', '" + user_Code
-			+ "', '" + csm_Type + "', '" + scm_Type + "')";
+	String sql = "INSERT INTO KYJ_USER VALUES('" 
+			+ user_Id + "', '" 
+			+ user_Pw + "', '" 
+			+ user_Name + "', '" 
+			+ user_NikName+ "', '" 
+			+ user_Phone + "', '" 
+			+ user_Email + "', '" 
+			+ user_Gender + "', '" 
+			+ user_Address + "', '" 
+			+ user_Code+ "', '" 
+			+ csm_Type + "', '" 
+			+ scm_Type+ "', '" 
+			+ 0 + "', '" 
+			+ user_Date + "')";
 
-	stmt.executeUpdate(sql);
+ 	stmt.executeUpdate(sql);
 
 	String scm_ShopName = request.getParameter("user_ShopName");
 	String scm_Number = request.getParameter("user_Number");
@@ -38,11 +50,11 @@
 	sql = "INSERT INTO KYJ_SCM VALUES('" + user_Id + "', '" + scm_ShopName + "', '" + scm_Number + "', '" + user_Name
 			+ "', '" + user_Address + "', '" + scm_Type + "', '" + user_Code + "')";
 
-	stmt.executeUpdate(sql);
+	stmt.executeUpdate(sql); 
 	%>
 </body>
 </html>
 <script>
-	alert("회원가입이 완료되었습니다.");
+ 	alert("회원가입이 완료되었습니다.");
 	location.href = "1_home.jsp";
 </script>

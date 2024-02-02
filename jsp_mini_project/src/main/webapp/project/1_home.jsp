@@ -5,11 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>홈화면</title>
+<link rel="stylesheet" href="home.css"  />
 </head>
-<link rel="stylesheet" href="home.css?after" type="text/css" />
 <body>
+	<%@ include file="dbconn.jsp"%>
+	<%
+		String sql="SELECT * FROM KYJ_USER";
+		ResultSet rs = stmt.executeQuery(sql);
+		rs.next();
+	%>
 	<header>
 		<img src="image/logomimi.png" alt="로고" width="350px">
+		<div>
+		<% 
+		if(request.isRequestedSessionIdValid()){
+				session.invalidate();
+				}else{
+					out.print("세션이 없다.");
+				}
+		%>
+		</div>
 	</header>
 
 	<section>
@@ -32,6 +47,7 @@
 						<h3>로그인</h3>
 
 					</div>
+
 					<form name="login_user" action="6_user_Login_DB.jsp">
 						<label for="username">아이디:</label> 
 						<input type="text"id="user_Id" name="user_Id" required>

@@ -1,45 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>아이디 중복 체크</title>
+    <meta charset="UTF-8">
+    <title>아이디 중복 체크</title>
 </head>
 <body>
-	<form name="check">
-		<%@ include file="dbconn.jsp"%>
-		<%
-		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
-		String sql = "SELECT * FROM TBL_MEMBER WHERE USERID = '" + id + "'";
-		ResultSet rs = stmt.executeQuery(sql);
+    <form name="checkId">
+        <%@ include file="dbconn.jsp"%>
+        <%
+        request.setCharacterEncoding("UTF-8");
+        String user_Id = request.getParameter("user_Id");
+        String code = request.getParameter("code");
+        String sql = "SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";
+        ResultSet rs = stmt.executeQuery(sql);
 
-		if (rs.next()) {
-			out.println("중복된 아이디 입니다.");
-		%>
-		<div>
-			<input name="id"> <input type="button" value="중복체크"
-				onclick="idCheck()">
-		</div>
-		<%
-		} else {
-		out.println("사용가능한 아이디 입니다.");
-		}
-		%>
-		<div>
-			<input type="button" value="닫기" onclick="popClose('<%=id%>')">
-		</div>
-	</form>
+        if (rs.next()) {
+            out.println("중복된 아이디 입니다.");
+        %>
+        <div>
+            <input type= "text" name="user_Id"> 
+            <input type="button" value="중복체크" onclick="idCheck('<%=code%>')">
+        </div>
+        <%
+        } else {
+            out.println("사용가능한 아이디 입니다.");
+        }
+        %>
+        <div>
+            <input type="button" value="닫기" onclick="popClose('<%=user_Id%>', '<%=code%>')">
+        </div>
+    </form>
 </body>
 </html>
 <script>
-	function popClose(id) {
-		/* 팝업(부모창(회원가입창)) form(name="join") input(name="id")의 값 */
-		window.opener.document.join.id.value = id;
-		window.close();
-	}
-	function idCheck() {
-		location.href = "user_idCheck.jsp?id=" + document.check.id.value;
-	}
+    function popClose(user_Id, code) {
+        window.opener.document.checkId.user_Id.value = user_Id;
+        window.opener.document.checkId.code.value = code;
+        window.close();
+    }
+
+    function idCheck(code) {
+        location.href = "7_user_Id_Check.jsp?user_Id=" + document.checkId.user_Id.value + "&code=" + code;
+    }
 </script>

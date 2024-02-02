@@ -18,7 +18,7 @@
             <form name="userUser_Add" action="5_user_Add_Save.jsp">
                 <div class="inLineBox">
                     <div>아이디 : <input type="text" id="user_Id" name="user_Id" required class="textBox1"></div>
-                    <input type="button" value="중복확인" onclick="" class="checkBtn">
+                    <input type="button" value="중복확인" onclick="checkId()" class="checkBtn">
                     <input name=code value="<%=code%>" hidden>
                 </div>
                 <div>비밀번호 : <input type="password" id="user_Pw" name="user_Pw" required class="textBox1"></div>
@@ -57,5 +57,13 @@
 </body>
 </html>
 <script>
+	function checkId(){
+		var form = document.userUser_Add;
+		var user_Id = form.user_Id.value;
+		
+		/*  팝업 만들기 window.open(주소,팝업이름,크기) */
+		var	pop = window.open("7_user_Id_Check.jsp?user_Id="+user_Id,"check","width=300, height=100");
+		
+	}
 
 </script>
