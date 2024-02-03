@@ -19,7 +19,7 @@
 		String code = rs.getString("CODE");
 %>
 <header>
-			<a href="8_user_login_view.jsp">
+			<a href="8_scm_login_view.jsp?user_Id=<%=user_Id %>">
 				<img src="image/logomimi.png" alt="로고" width="350px">
 			</a>
 			<div>
@@ -134,9 +134,9 @@
 	/* 내 정보 수정  */
 	function user_Info_Update(user_Id,code){
 		if(code == "1"){
-			location.href = "914_scm_Info_Update.jsp?user_Id="+user_Id+"&code="+code;			
+			location.href = "914_scm_Info.jsp?user_Id="+user_Id+"&code="+code;			
 		}else{		
-			location.href = "913_csm_Info_Update.jsp?user_Id="+user_Id+"&code="+code;			
+			location.href = "913_csm_Info.jsp?user_Id="+user_Id+"&code="+code;			
 		}
 	}
 	/* 로그아웃  */

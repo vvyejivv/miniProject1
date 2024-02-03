@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>홈화면</title>
-<link rel="stylesheet" href="home.css"  />
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
 	<%@ include file="dbconn.jsp"%>

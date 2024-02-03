@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>업체 회원가입 데이터 저장</title>
+<title>회원가입 데이터 저장</title>
 </head>
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
 	request.setCharacterEncoding("UTF-8");
+	String code = request.getParameter("code");
 	/* 회원가입 내용  */
 	String user_Id = request.getParameter("user_Id");
 	String user_Pw = request.getParameter("user_Pw");
@@ -26,6 +27,8 @@
 	String csm_Type = request.getParameter("csm_Type");
 	String scm_Type = request.getParameter("scm_Type");
 	String user_Date = request.getParameter("user_Date");
+	String scm_ShopName = request.getParameter("user_ShopName");
+	String scm_Number = request.getParameter("user_Number");
 
 	String sql = "INSERT INTO KYJ_USER VALUES('" 
 			+ user_Id + "', '" 
@@ -44,12 +47,8 @@
 
  	stmt.executeUpdate(sql);
 
-	String scm_ShopName = request.getParameter("user_ShopName");
-	String scm_Number = request.getParameter("user_Number");
-
 	sql = "INSERT INTO KYJ_SCM VALUES('" + user_Id + "', '" + scm_ShopName + "', '" + scm_Number + "', '" + user_Name
-			+ "', '" + user_Address + "', '" + scm_Type + "', '" + user_Code + "')";
-
+		+ "', '" + user_Address + "', '" + scm_Type + "', '" + user_Code + "')";
 	stmt.executeUpdate(sql); 
 	%>
 	<% conn.close(); %>
