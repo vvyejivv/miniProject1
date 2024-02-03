@@ -20,6 +20,7 @@
 	String user_Address = request.getParameter("user_Address");
 	String user_Email = request.getParameter("user_Email");
 	String scm_Type= request.getParameter("scm_Type");
+	String csm_Type= request.getParameter("csm_Type");
 	String code = request.getParameter("code");
 	
 	String pwdStr = "";
@@ -34,6 +35,7 @@
 			+"USER_PHONE = '" + Phone + "', "
 			+"USER_ADDRESS = '" + user_Address + "', "
 			+"USER_EMAIL = '" + user_Email + "', "
+			+"CSM_TYPE = '" + csm_Type + "', "
 			+"SCM_TYPE = '" + scm_Type + "' "
 			+"WHERE USER_ID = '" + user_Id +"'";
 	stmt.executeUpdate(sql);	
@@ -51,7 +53,7 @@
 </body>
 </html>
 <script>
-	var code = "<%=code%>";
+var code = "<%=code%>";
  	alert("회원정보가 수정되었습니다.");
  	
  	if(code == 1){

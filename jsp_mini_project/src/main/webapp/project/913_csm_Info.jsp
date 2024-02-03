@@ -5,26 +5,47 @@
 <head>
 <meta charset="UTF-8">
 <title>개인회원수정</title>
+<link rel="stylesheet" href="user_Add.css?after" type="text/css" />
 </head>
 <body>
-<%@ include file="dbconn.jsp"%>
-<%
+	<%@ include file="dbconn.jsp"%>
+	<%
 		String code = request.getParameter("code");
-%>
+		String user_Id = request.getParameter("user_Id");
+
+		String sql = "SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";
+		ResultSet rs = stmt.executeQuery(sql);
+		rs.next();
+	%>
     <div class="signupContainer">
         <div class="signupBox">
-            <h2>[ 개인회원 회원가입 ]</h2>
-            <form name="userUser_Add" action="5_user_Add_Save.jsp">
+            <h2>[ <%=user_Id%> 님의 회원정보수정 ]</h2>
+            <form name="scm_update" action="915_user_Info_Update.jsp">
                 <div class="inLineBox">
-                    <div>아이디 : <input type="text" id="user_Id" name="user_Id" required class="textBox1"></div>
-                    <input type="button" value="중복확인" onclick="checkId()" class="checkBtn">
+                    <div>
+                    	아이디 : 
+                    	<input type="text" id="user_Id" class="textBox1" value="<%=user_Id%>" disabled>
+	                    <input name="user_Id" value="<%=user_Id%>" hidden>
+                    </div>
                     <input name=code value="<%=code%>" hidden>
                 </div>
                 <div>비밀번호 : <input type="password" id="user_Pw" name="user_Pw" required class="textBox1"></div>
                 <div>비밀번호 확인 : <input type="password" id="user_Pw2" name="user_Pw2" required class="textBox1"></div>
-                <div>이름 : <input type="text" id="user_Name" name="user_Name" class="textBox1"></div>
-                <div>생년월일 : <input type="text" id="user_Date" name="user_Date" class="textBox1"></div>
-                <div>별명 : <input type="text" id="user_NikName" name="user_NikName" class="textBox1"></div>
+                <div>
+                	이름 : 
+                	<input type="text" id="user_Name" class="textBox1" value="<%=rs.getString("USER_NAME")%>" disabled>
+                	<input type="text" name="user_Name" class="textBox1" value="<%=rs.getString("USER_NAME")%>" hidden>
+                </div>
+                <div>
+                	생년월일 : 
+                	<input type="text" id="user_Date" class="textBox1" value="<%=rs.getString("USER_DATE")%>" disabled>
+                	<input type="text"  name="user_Date" class="textBox1" value="<%=rs.getString("USER_DATE")%>" hidden>
+                </div>
+                <div>
+                	별명 : 
+                		<input type="text" id="user_NikName" class="textBox1">
+                		<input name="user_NikName" value="<%=rs.getString("USER_NIKNAME")%>" hidden>
+                </div>
                 <div> 성별 : 
                     <label><input type="radio" id="user_Gender" name="user_Gender" value="남자"> 남자</label>
                     <label><input type="radio" id="user_Gender" name="user_Gender" value="여자"> 여자</label>
@@ -47,11 +68,16 @@
                     <label><input type="radio" id="csm_Type" name="csm_Type" value="카페"> 카페</label>
                 </div> 
                         
-                        <div><input type="submit" value="가입하기" onclick="" class="addBtn"></div>
-                    </form>
-                    <p>이미 계정이 있으신가요? <a href="6_user_Login_DB.jsp">로그인</a></p>
+                        <div><input type="submit" value="수정하기" class="addBtn"></div>
+              </form>
+                    <div><input type="button" value="되돌아가기" class="addBtn" onclick="back('<%=user_Id%>')"></div>
                 </div>
             </div>
         
 </body>
 </html>
+<script>
+	function back(user_Id){
+		location.href = "8_csm_login_view.jsp?user_Id=" + user_Id;
+	}
+</script>
