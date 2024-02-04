@@ -41,11 +41,11 @@
 			</div>
 			<table border="1" id="orderTable">
 			<tr>
-				<td>NO</td>
-				<td>주문자</td>
-				<td>메뉴</td>
-				<td>주문날짜</td>
-				<td>가격</td>
+				<th>NO</th>
+				<th>주문자</th>
+				<th>메뉴</th>
+				<th>주문날짜</th>
+				<th>가격</th>
 			</tr>
 			<%
 				int cnt = 0;

@@ -366,6 +366,135 @@
  	opacity: 1;
  	/* 호버시 흐린 배경을 표시하기 위해 투명도 조정 */
  }
+ 
+ /* foodList_Box2 스타일 추가 */
+.foodList_Box2 {
+    padding: 20px;
+    max-width: 1020px;
+    margin: 10px auto;
+    position: relative;
+    top: 350px;
+    background-color: #fff; /* 추가: 백그라운드 컬러 설정 */
+    border-radius: 10px; /* 추가: 모서리를 부드럽게 만들어줍니다. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 추가: 그림자 효과 */
+}
+
+/* 각 음식 카테고리에 대한 스타일 */
+.foodList_Box2 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.foodList_Box2 th,
+.foodList_Box2 td {
+    border: 1px solid #ddd;
+    padding: 15px; /* 추가: 셀 안의 내용과의 간격 조정 */
+    text-align: center;
+}
+
+.foodList_Box2 th {
+    /* background-color: #FF5EA7; 변경: 헤더 배경 색상 변경 */
+    color: #fff;
+    border-radius: 5px; /* 추가: 모서리를 부드럽게 만들어줍니다. */
+}
+
+.foodList_Box2 tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 추가적인 스타일 (있으면 추가) */
+.foodList_Box2 span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    color: #FF5EA7; /* 변경: 텍스트 색상 변경 */
+}
+
+.foodList_Box2 img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* 추가: 이미지 모서리를 부드럽게 만들어줍니다. */
+}
+
+/* 테이블 내용에 대한 스타일 (가게명, 별점 등) */
+.foodList_Box2 td {
+    font-size: 16px;
+}
+
+.foodList_Box2 .rating {
+    color: #FF5EA7;
+    font-weight: bold;
+}
+
+.foodList_Box3 {
+    padding: 20px;
+    max-width: 1020px;
+    margin: 10px auto;
+    position: relative;
+    top: 350px;
+    right : 190px;
+    background-color: #fff; /* 추가: 백그라운드 컬러 설정 */
+    border-radius: 10px; /* 추가: 모서리를 부드럽게 만들어줍니다. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 추가: 그림자 효과 */
+}
+/* 각 음식 카테고리에 대한 스타일 */
+.foodList_Box3 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.foodList_Box3 th,
+.foodList_Box3 td {
+    border: 1px solid #ddd;
+    padding: 15px; /* 추가: 셀 안의 내용과의 간격 조정 */
+    text-align: center;
+}
+
+.foodList_Box3 th {
+    /* background-color: #FF5EA7; 변경: 헤더 배경 색상 변경 */
+    color: #fff;
+    border-radius: 5px; /* 추가: 모서리를 부드럽게 만들어줍니다. */
+}
+
+.foodList_Box3 tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 추가적인 스타일 (있으면 추가) */
+.foodList_Box3 span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    color: #FF5EA7; /* 변경: 텍스트 색상 변경 */
+}
+
+.foodList_Box3 img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* 추가: 이미지 모서리를 부드럽게 만들어줍니다. */
+}
+
+/* 테이블 내용에 대한 스타일 (가게명, 별점 등) */
+.foodList_Box3 td {
+    font-size: 16px;
+}
+
+.foodList_Box3 .rating {
+    color: #FF5EA7;
+    font-weight: bold;
+}
 
  footer {
  	background-color: #fff;
@@ -374,3 +503,4 @@
  	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 
  }
+
