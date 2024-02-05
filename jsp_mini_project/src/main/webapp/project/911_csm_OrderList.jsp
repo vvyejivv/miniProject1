@@ -87,11 +87,10 @@
 		if(orderList.shopName.value == "" || orderList.shopName.value == "null" || orderList.shopName.value == undefined){
 			alert("가게명을 입력하세요");
 		}
-		location.href = "912_csm_OrderList.jsp?shopName=" + encodedShopName
-				+ "&user_Id=" + user_Id;
+		location.href = "911_csm_OrderList.jsp?shopName=" + encodedShopName + "&user_Id=" + user_Id;
 	}
 	function allList(user_Id){
-		location.href = "912_csm_OrderList.jsp?user_Id=" + user_Id;
+		location.href = "911_csm_OrderList.jsp?user_Id=" + user_Id;
 	}
 	function mainHome(user_Id){
 		location.href = "8_csm_login_view.jsp?user_Id=" + user_Id;

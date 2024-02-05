@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문내역 페이지</title>
+<title>매출내역 페이지</title>
 <link rel="stylesheet" href="orderList.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 		<div class="order_List">
 			<div class="order_title">
 				<div>
-					<h2><%=user_Id%>님의 매출 내역</h2>
+					<h2><%=user_Id%>님의 매출내역</h2>
 				</div>
 				<div>
 					<input type="text" name="menu" placeholder="메뉴를 입력하세요" value=""> 
@@ -82,10 +82,10 @@
 		if(orderList.menu.value == "" || orderList.menu.value == "null" || orderList.menu.value == undefined){
 			alert("메뉴를 입력하세요");
 		}
-		location.href = "911_scm_OrderList.jsp?menu=" + menu+ "&user_Id=" + user_Id;
+		location.href = "912_scm_OrderList.jsp?menu=" + menu+ "&user_Id=" + user_Id;
 	}
 	function allList(user_Id){
-		location.href = "911_scm_OrderList.jsp?user_Id=" + user_Id;
+		location.href = "912_scm_OrderList.jsp?user_Id=" + user_Id;
 	}
 	function mainHome(user_Id){
 		location.href = "8_scm_login_view.jsp?user_Id=" + user_Id;

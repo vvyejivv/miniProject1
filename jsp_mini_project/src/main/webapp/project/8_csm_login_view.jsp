@@ -254,12 +254,12 @@ function food(foodType) {
 }
 	/* 주문내역 */
 	function user_OrderList(user_Id){
-		location.href = "912_csm_OrderList.jsp?user_Id="+user_Id;		
+		location.href = "911_csm_OrderList.jsp?user_Id="+user_Id;		
 	}
 	/* 내 정보 수정  */
 	function user_Info_Update(user_Id,code){
 		if(code == "1"){
-			location.href = "912_scm_Info.jsp?user_Id="+user_Id+"&code="+code;			
+			location.href = "914_scm_Info.jsp?user_Id="+user_Id+"&code="+code;			
 		}else{		
 			location.href = "913_csm_Info.jsp?user_Id="+user_Id+"&code="+code;			
 		}

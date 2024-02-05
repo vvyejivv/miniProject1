@@ -254,7 +254,7 @@
 	}
 	/* 주문내역 */
 	function user_OrderList(user_Id){
-		location.href = "911_scm_OrderList.jsp?user_Id="+user_Id;		
+		location.href = "912_scm_OrderList.jsp?user_Id="+user_Id;		
 	}
 	/* 내 정보 수정  */
 	function user_Info_Update(user_Id,code){
