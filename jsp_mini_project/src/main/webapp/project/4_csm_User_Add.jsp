@@ -62,7 +62,7 @@
 		var user_Id = form.user_Id.value;
 		
 		/*  팝업 만들기 window.open(주소,팝업이름,크기) */
-		var	pop = window.open("7_user_Id_Check.jsp?user_Id="+user_Id,"check","width=300, height=100");
+		var	pop = window.open("7_user_Id_Check.jsp?user_Id="+user_Id,"check","width=500, height=400");
 		
 	}
 

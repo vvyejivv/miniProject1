@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>아이디 중복 체크</title>
+    <link rel="stylesheet" href="user_Id_Check.css">
 </head>
 <body>
     <form name="checkId">
@@ -17,15 +18,17 @@
         ResultSet rs = stmt.executeQuery(sql);
 
         if (rs.next()) {
-            out.println("중복된 아이디 입니다.");
         %>
+        	<div>중복된 아이디 입니다.</div>
         <div>
             <input type= "text" name="user_Id"> 
             <input type="button" value="중복체크" onclick="idCheck('<%=code%>')">
         </div>
         <%
         } else {
-            out.println("사용가능한 아이디 입니다.");
+        %>
+        	<div>사용 가능한 아이디 입니다.</div>
+        <%
         }
         %>
         <div>

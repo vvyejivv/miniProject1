@@ -22,7 +22,7 @@
 			<a href="8_scm_login_view.jsp?user_Id=<%=user_Id %>">
 				<img src="image/logomimi.png" alt="로고" width="350px">
 			</a>
-			<div>
+<%-- 			<div>
 		<% 
 		if(request.isRequestedSessionIdValid()){
 				out.print("세션이 있다");
@@ -30,7 +30,7 @@
 					out.print("세션이 없다.");
 				}
 		%>
-		</div>
+		</div> --%>
 </header>
 
 <section>
@@ -91,7 +91,7 @@
 				</div>
 				<div class="fl_Box6">
 					<a href="#" onclick="review('<%=user_Id%>')"> <img src="image/kfood.jpg"
-						alt="더보기"> <span class="image-text">우리 가게 리뷰</span>
+						alt="더보기"> <span class="image-text">리뷰보기</span>
 					</a>
 				</div>
 			</div>
@@ -272,5 +272,9 @@
 	}
 	function review(user_Id){
 		location.href = "924_scm_Review.jsp?user_Id=" + user_Id;
+	}
+	/* 주문 리뷰  */
+	function review(user_Id){
+		location.href = "920_user_Review_List.jsp?user_Id="+user_Id;
 	}
 </script>

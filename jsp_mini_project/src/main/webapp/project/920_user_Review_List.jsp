@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰리스트 페이지</title>
+<link rel="stylesheet" href="user_Review_List.css?after" type="text/css" >
 </head>
 <body>
 <%@ include file="dbconn.jsp"%>
@@ -22,11 +23,12 @@
 %>
 	<form name="review">
 		<div>
-			💚💚리뷰검색 : 
+			❤❤리뷰검색 : 
 			<input type="text" name="keyword" value="<%=keyword%>" placeholder="가게명 혹은 제목을 입력해보세요!">
 			<input type="button" value="검색" onclick="search()">
 			<input type="button" value="전체보기" onclick="allList()">
 			<input type="button" value="홈화면" onclick="mainHome()">
+			<input type="text" value="제목을 누르면 리뷰를 볼 수 있어요!" disabled>
 		</div>
 		<table border="1">
 			<tr>

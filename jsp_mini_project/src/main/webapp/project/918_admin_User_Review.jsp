@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 리뷰리스트</title>
+<link rel="stylesheet" href="user_Review_List.css?after" type="text/css" >
 </head>
 <body>
 <%@ include file="dbconn.jsp"%>
@@ -22,11 +23,11 @@
 %>
 	<form name="review">
 		<div>
-			💚💚리뷰검색 : 
+			💜💜리뷰검색 : 
 			<input type="text" name="keyword" value="<%=keyword%>" placeholder="단어 입력해보세요!">
 			<input type="button" value="검색" onclick="search()">
 			<input type="button" value="전체보기" onclick="allList()">
-			<input type="button" value="홈화면" onclick="mainHome()">
+			<input type="button" value="회원목록" onclick="mainHome()">
 		</div>
 		<table border="1">
 			<tr>
@@ -39,10 +40,12 @@
 				<th>삭제</th>		
 			</tr>
 		<%
+			int cnt = 0;
 			while(rs.next()){
+				++cnt;
 		%>
 			<tr>
-				<td><%=rs.getString("R_NO") %></td>
+				<td><%=cnt%></td>
 				<td>
 					<a href="923_user_Review_View.jsp?R_NO=<%=rs.getString("R_NO") %>&user_Id=<%=rs.getString("USER_ID")%>">
 						<%=rs.getString("R_TITLE") %>

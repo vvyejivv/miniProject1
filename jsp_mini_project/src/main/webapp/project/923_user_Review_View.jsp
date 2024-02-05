@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>REVIEW</title>
+<link rel="stylesheet" href="user_Review_View.css?after" type="text/css" >
 </head>
 <body>
 	<form name="review"action="">
@@ -44,14 +45,16 @@
                 </tr>
             </table>
             <div>
-            	<input type="button" onclick="mainHome()" value="HOME">
-            	<input type="button" onclick="allList()" value="전체리뷰">
+            	<input type="button" onclick="allList()" value="전체목록">
             </div>
         <%
         if(sessionId != null && (sessionId.equals(review_Id) || sessionId.equals("admin"))){
         %>
+            <div style="display: inline;">
+            <input type="button" onclick="mainHome()" value="회원목록">
             <input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
             <input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
+            </div>
         <%
         }
         %>
@@ -60,7 +63,7 @@
 </html>
 <script>
 	function mainHome(){
-		location.href="1_home.jsp";
+		location.href="9_admin_view.jsp";
 	}
 	function allList(){
 		location.href="920_user_Review_List.jsp";

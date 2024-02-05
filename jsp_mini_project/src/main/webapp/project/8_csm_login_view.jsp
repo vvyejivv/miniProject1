@@ -22,7 +22,7 @@
 			<a href="8_csm_login_view.jsp?user_Id=<%=user_Id %>">
 				<img src="image/logomimi.png" alt="로고" width="350px">
 			</a>
-			<div>
+<%-- 			<div>
 		<% 
 		if(request.isRequestedSessionIdValid()){
 				out.print("세션이 있다");
@@ -30,7 +30,7 @@
 					out.print("세션이 없다.");
 				}
 		%>
-		</div>
+		</div> --%>
 </header>
 
 <section>

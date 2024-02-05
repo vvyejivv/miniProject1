@@ -18,7 +18,7 @@
 		<a href="1_home.jsp"> <img src="image/logomimi.png" alt="로고"
 			width="350px">
 		</a>
-		<div>
+<%-- 		<div>
 			<%
 			if (request.isRequestedSessionIdValid()) {
 				session.invalidate();
@@ -26,7 +26,7 @@
 				out.print("세션이 없다.");
 			}
 			%>
-		</div>
+		</div> --%>
 	</header>
 
 	<section>

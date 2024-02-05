@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자페이지</title>
+<link rel="stylesheet" href="admin_view.css?after" type="text/css" >
 </head>
 <body>
 	<%@ include file="dbconn.jsp"%>
