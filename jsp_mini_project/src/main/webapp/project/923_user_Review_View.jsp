@@ -16,6 +16,9 @@
 		
 		ResultSet rs = stmt.executeQuery(sql);
         rs.next();
+        
+        String sessionId = (String) session.getAttribute("user_Id"); // 세션 아이디 가져오기
+        String review_Id = rs.getString("USER_ID");
         %>
             <div>💛리뷰💛</div>
             <table border="1">
@@ -43,21 +46,15 @@
             <div>
             	<input type="button" onclick="mainHome()" value="HOME">
             	<input type="button" onclick="allList()" value="전체리뷰">
-				<input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
-				<input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
             </div>
-        <%-- <% 
-        String sessionId = "";
-		String review_Id = rs.getString("USER_ID");
-		if(request.isRequestedSessionIdValid()){
-			sessionId = (String) session.getAttribute("user_Id");		
-		}
-		if(sessionId.equals(review_Id) || sessionId.equals("admin")){
-		%>
-			<input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
-		<% 
-		}
-        %> --%>
+        <%
+        if(sessionId != null && (sessionId.equals(review_Id) || sessionId.equals("admin"))){
+        %>
+            <input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
+            <input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
+        <%
+        }
+        %>
     </form>
 </body>
 </html>
