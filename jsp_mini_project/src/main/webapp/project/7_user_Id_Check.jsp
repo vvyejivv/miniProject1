@@ -37,8 +37,8 @@
 </html>
 <script>
     function popClose(user_Id, code) {
-        window.opener.document.checkId.user_Id.value = user_Id;
-        window.opener.document.checkId.code.value = code;
+        window.opener.document.userUser_Add.user_Id.value = user_Id;
+        window.opener.document.userUser_Add.code.value = code;
         window.close();
     }
 

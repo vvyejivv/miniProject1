@@ -29,8 +29,8 @@
                 <div>사업자이름 : <input type="text" id="user_Name" name="user_Name" class="textBox1"></div>
                 <div>사업자주소 : <input type="text" id="user_Address" name="user_Address" class="textBox1"></div>
                 <div> 성별 : 
-                    <label><input type="radio" id="user_Gender" name="user_Gender" value="남자"> 남자</label>
-                    <label><input type="radio" id="user_Gender" name="user_Gender" value="여자"> 여자</label>
+                    <label><input type="radio" id="user_Gender" name="user_Gender" value="남성"> 남성</label>
+                    <label><input type="radio" id="user_Gender" name="user_Gender" value="여성"> 여성</label>
                 </div> 
                 <div>연락처 :
                     <input type="text" id="user_Phone1" name="user_Phone1" class="phone">-
@@ -51,7 +51,7 @@
                         
                         <div><input type="submit" value="가입하기" class="addBtn"></div>
                     </form>
-                    <p>이미 계정이 있으신가요? <a href="6_user_Login_DB.jsp">로그인</a></p>
+                    <p>이미 계정이 있으신가요? <a href="1_home.jsp">로그인</a></p>
                 </div>
             </div>
             <%

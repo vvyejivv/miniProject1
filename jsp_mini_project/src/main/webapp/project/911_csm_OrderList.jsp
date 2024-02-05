@@ -59,7 +59,11 @@
 				<tr>
 					<td><%=cnt%></td>
 					<td><%=rs.getString("SCM_TYPE")%></td>
-					<td><%=rs.getString("SCM_SHOPNAME")%></td>
+					<td>
+						<a href="921_user_Review_Add.jsp?scm_ShopName=<%=rs.getString("SCM_SHOPNAME")%>&user_Id=<%=user_Id%>&order_Date=<%=rs.getString("ORDER_DATE")%>&scm_Menu=<%=rs.getString("SCM_MENU")%>">
+							<%=rs.getString("SCM_SHOPNAME")%>
+						</a>
+					</td>
 					<td><%=rs.getString("ORDER_DATE")%></td>
 					<td><%=rs.getString("SCM_MENU")%></td>
 					<td><%=rs.getString("TOTAL_PRICE")%></td>

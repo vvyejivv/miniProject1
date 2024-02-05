@@ -90,8 +90,8 @@
 					</a>
 				</div>
 				<div class="fl_Box6">
-					<a href="#" onclick=""> <img src="image/kfood.jpg"
-						alt="더보기"> <span class="image-text">더보기</span>
+					<a href="#" onclick="review('<%=user_Id%>')"> <img src="image/kfood.jpg"
+						alt="더보기"> <span class="image-text">리뷰보기</span>
 					</a>
 				</div>
 			</div>
@@ -270,5 +270,8 @@ function food(foodType) {
 		location.href = "910_user_Logout.jsp";			
 		}
 	}
-
+	/* 주문한 가게 리뷰  */
+	function review(user_Id){
+		location.href = "920_user_Review_List.jsp?user_Id="+user_Id;
+	}
 </script>

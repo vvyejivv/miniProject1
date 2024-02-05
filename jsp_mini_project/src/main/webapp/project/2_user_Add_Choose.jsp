@@ -16,7 +16,7 @@
             <div class="signupButtonWrapper">
                 <button class="signupButton" onclick="userUser_Add(1)">업체회원</button>
             </div>
-            <div class="loginText">이미 계정이 있으신가요? <a href="6_user_Login_DB.jsp">로그인</a></div>
+            <div class="loginText">이미 계정이 있으신가요? <a href="1_home.jsp">로그인</a></div>
         </div>
     </div>
 </body>

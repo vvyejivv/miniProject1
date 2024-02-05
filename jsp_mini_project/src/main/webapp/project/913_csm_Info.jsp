@@ -70,6 +70,7 @@
                         
                         <div><input type="submit" value="수정하기" class="addBtn"></div>
               </form>
+                    <div><input type="button" value="회원탈퇴" class="addBtn" onclick="deleteU('<%=user_Id%>')"></div>
                     <div><input type="button" value="되돌아가기" class="addBtn" onclick="back('<%=user_Id%>')"></div>
                 </div>
             </div>
@@ -79,5 +80,10 @@
 <script>
 	function back(user_Id){
 		location.href = "8_csm_login_view.jsp?user_Id=" + user_Id;
+	}
+	function deleteU(user_Id){
+		if(confirm("정말 회원탈퇴 하시겠습니까?")){			
+		location.href = "916_user_delete.jsp?user_Id=" + user_Id;
+		}
 	}
 </script>

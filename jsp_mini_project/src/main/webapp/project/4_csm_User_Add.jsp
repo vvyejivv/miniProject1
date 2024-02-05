@@ -27,8 +27,8 @@
                 <div>생년월일 : <input type="text" id="user_Date" name="user_Date" class="textBox1"></div>
                 <div>별명 : <input type="text" id="user_NikName" name="user_NikName" class="textBox1"></div>
                 <div> 성별 : 
-                    <label><input type="radio" id="user_Gender" name="user_Gender" value="남자"> 남자</label>
-                    <label><input type="radio" id="user_Gender" name="user_Gender" value="여자"> 여자</label>
+                    <label><input type="radio" id="user_Gender" name="user_Gender" value="남성"> 남성</label>
+                    <label><input type="radio" id="user_Gender" name="user_Gender" value="여성"> 여성</label>
                 </div> 
                 <div>주소 : <input type="text" id="user_Address" name="user_Address" class="textBox1"></div>
                 <div>연락처 :
@@ -50,7 +50,7 @@
                         
                         <div><input type="submit" value="가입하기" onclick="" class="addBtn"></div>
                     </form>
-                    <p>이미 계정이 있으신가요? <a href="6_user_Login_DB.jsp">로그인</a></p>
+                    <p>이미 계정이 있으신가요? <a href="1_home.jsp">로그인</a></p>
                 </div>
             </div>
         

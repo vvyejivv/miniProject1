@@ -51,11 +51,12 @@
 					</div>
 
 					<form name="login_user" action="6_user_Login_DB.jsp">
-						<label for="username">아이디:</label> <input type="text" id="user_Id"
-							name="user_Id" required> <label for="password">비밀번호:</label>
+						<label for="username">아이디:</label> 
+						<input type="text" id="user_Id" name="user_Id" required> 
+						<label for="password">비밀번호:</label>
 						<input type="password" id="user_Pw" name="user_Pw" required>
-						<input type="submit" value="로그인"> <input type="button"
-							value="회원가입" onclick="user_Add()">
+						<input type="submit" value="로그인"> 
+						<input type="button" value="회원가입" onclick="user_Add()">
 					</form>
 				</div>
 			</div>
@@ -86,8 +87,8 @@
 					</a>
 				</div>
 				<div class="fl_Box6">
-					<a href="#" onclick=""> <img src="image/kfood.jpg"
-						alt="더보기"> <span class="image-text">더보기</span>
+					<a href="#" onclick="review()"> <img src="image/kfood.jpg"
+						alt="더보기"> <span class="image-text">전체 리뷰 확인</span>
 					</a>
 				</div>
 			</div>
@@ -225,6 +226,9 @@
 <script>
 	function user_Add() {
 		location.href = "2_user_Add_Choose.jsp";
+	}
+	function review(){
+		location.href="920_user_Review_List.jsp";
 	}
 	function food(foodType) {
 		var foodList_Box2 = document.querySelector('.foodList_Box2');

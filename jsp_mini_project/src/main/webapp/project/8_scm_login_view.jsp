@@ -90,8 +90,8 @@
 					</a>
 				</div>
 				<div class="fl_Box6">
-					<a href="#" onclick=""> <img src="image/kfood.jpg"
-						alt="더보기"> <span class="image-text">더보기</span>
+					<a href="#" onclick="review('<%=user_Id%>')"> <img src="image/kfood.jpg"
+						alt="더보기"> <span class="image-text">우리 가게 리뷰</span>
 					</a>
 				</div>
 			</div>
@@ -269,5 +269,8 @@
 		if(confirm("로그아웃 하시겠습니까?")){
 		location.href = "910_user_Logout.jsp";			
 		}
+	}
+	function review(user_Id){
+		location.href = "924_scm_Review.jsp?user_Id=" + user_Id;
 	}
 </script>
