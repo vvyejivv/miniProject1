@@ -47,23 +47,33 @@
             <div>
             	<input type="button" onclick="allList()" value="전체목록">
             </div>
-        <%
-        if(sessionId != null && (sessionId.equals(review_Id) || sessionId.equals("admin"))){
-        %>
+		<%     
+            if(sessionId.equals("admin")){
+		%>
+		    <div style="display: inline;">
+            	<input type="button" onclick="mainHome('<%=sessionId%>')" value="회원목록">
+	            <input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
+	            <input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
+	            <input type="button" value="돌아가기" onclick="listMain('<%=sessionId%>')">
+            </div>
+		<% }
+		
+		 if(sessionId != null && (review_Id.equals(sessionId))){ %>
             <div style="display: inline;">
-            <input type="button" onclick="mainHome()" value="회원목록">
-            <input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
-            <input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
+	            <input type="button" value="수정하기" onclick="reviewU('<%=R_NO%>','<%=rs.getString("SCM_SHOPNAME")%>','<%=rs.getString("ORDER_DATE")%>','<%=rs.getString("SCM_MENU")%>')">
+	            <input type="button" value="삭제하기" onclick="reviewD('<%=R_NO%>')">
+	            <input type="button" value="돌아가기" onclick="listMain('<%=sessionId%>')">
             </div>
         <%
-        }
+			}
         %>
     </form>
+    <% conn.close(); %>
 </body>
 </html>
 <script>
-	function mainHome(){
-		location.href="9_admin_view.jsp";
+	function mainHome(sessionId){
+		location.href="9_admin_view.jsp?user_Id="+sessionId;
 	}
 	function allList(){
 		location.href="920_user_Review_List.jsp";
@@ -77,6 +87,9 @@
 		if(confirm("정말 리뷰를 수정하시겠습니까?")){			
 			location.href="924_user_Review_Update.jsp?R_NO="+R_NO+"&scm_ShopName="+shop+"&order_Date="+date+"&scm_Menu="+menu;
 		}
+	}
+	function listMain(user_Id){
+		location.href="927_user_Review_Order.jsp?user_Id="+user_Id;
 	}
 		
 </script>

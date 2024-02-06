@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰 수정</title>
+<link rel="stylesheet" href="user_Review_Add.css?after" type="text/css" >
 </head>
 <body>
 <%@ include file="dbconn.jsp"%>
@@ -46,5 +47,6 @@
 			<input type="button" value="취소" onclick="history.back()">	
 		</div>
 	</form>
+<% conn.close(); %>
 </body>
 </html>

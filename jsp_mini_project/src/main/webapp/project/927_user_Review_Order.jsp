@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰리스트 페이지</title>
+<title>주문한 가게 리뷰 확인</title>
 <link rel="stylesheet" href="user_Review_List.css?after" type="text/css" >
 </head>
 <body>
 <%@ include file="dbconn.jsp"%>
 <%
 	String user_Id = (String)session.getAttribute("user_Id");
-	String sql = "SELECT * FROM KYJ_REVIEW ";
+	String sql = "SELECT * FROM KYJ_REVIEW WHERE USER_ID = '" + user_Id +"'";
 	String keyword = request.getParameter("keyword");
 	if(keyword != null){
-		sql += "WHERE R_TITLE LIKE '%" + keyword + "%' OR SCM_SHOPNAME LIKE '%" + keyword + "%'";
+		sql += " AND R_TITLE LIKE '%" + keyword + "%' OR SCM_SHOPNAME LIKE '%" + keyword + "%'";
 	} else {
 		keyword = "";
 	}
@@ -23,11 +23,12 @@
 %>
 	<form name="review">
 		<div>
-			🧡🧡리뷰검색 :  
+			💙💙리뷰검색 : 
 			<input type="text" name="keyword" value="<%=keyword%>" placeholder="가게명 혹은 제목을 입력해보세요!">
 			<input type="button" value="검색" onclick="search()">
 			<input type="button" value="전체보기" onclick="allList()">
-			<input type="button" value="홈화면" onclick="mainHome()">
+			<input type="button" value="홈화면" onclick="mainHome('<%=user_Id%>')">
+			<input type="button" value="로그아웃" onclick="user_LogOut()">
 			<input type="text" value="제목을 누르면 리뷰를 볼 수 있어요!" disabled>
 		</div>
 		<table border="1">
@@ -61,18 +62,24 @@
 		%>
 		</table>
 	</form>
-	<% conn.close(); %>
+<% conn.close(); %>	
 </body>
 </html>
 <script>
 	var form = document.review;
 	function search(){
-		location.href="920_user_Review_List.jsp?keyword="+form.keyword.value;
+		location.href="927_user_Review_Order.jsp?keyword="+form.keyword.value;
 	}
 	function allList(){
-		location.href="920_user_Review_List.jsp";
+		location.href="927_user_Review_Order.jsp";
 	}
-	function mainHome(){
-		location.href="1_home.jsp";
+	function mainHome(user_Id){
+		location.href="8_csm_login_view.jsp?user_Id="+user_Id;
+	}
+	/* 로그아웃  */
+	function user_LogOut(){
+		if(confirm("로그아웃 하시겠습니까?")){
+		location.href = "910_user_Logout.jsp";			
+		}
 	}
 </script>

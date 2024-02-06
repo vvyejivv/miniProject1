@@ -12,6 +12,7 @@
 <body>
 <%@ include file="dbconn.jsp"%>
 <%
+		String sessionId = (String) session.getAttribute("user_Id");
 		String user_Id = request.getParameter("user_Id");
 		String sql="SELECT * FROM KYJ_USER WHERE USER_ID = '" + user_Id + "'";
 		ResultSet rs = stmt.executeQuery(sql);
@@ -22,28 +23,20 @@
 			<a href="8_scm_login_view.jsp?user_Id=<%=user_Id %>">
 				<img src="image/logomimi.png" alt="로고" width="350px">
 			</a>
-<%-- 			<div>
-		<% 
-		if(request.isRequestedSessionIdValid()){
-				out.print("세션이 있다");
-				}else{
-					out.print("세션이 없다.");
-				}
-		%>
-		</div> --%>
+
 </header>
 
 <section>
 	<div class="foodMenu-buttons">
-		<button class="foodButton" onclick="">한식</button>
-		<button class="foodButton" onclick="">중식</button>
-		<button class="foodButton" onclick="">양식</button>
-		<button class="foodButton" onclick="">일식</button>
-		<button class="foodButton" onclick="">카페</button>
+		<button class="foodButton" onclick="food('k')">한식</button>
+		<button class="foodButton" onclick="food('c')">중식</button>
+		<button class="foodButton" onclick="food('u')">양식</button>
+		<button class="foodButton" onclick="food('j')">일식</button>
+		<button class="foodButton" onclick="food('cafe')">카페</button>
 	</div>
 	<div class="serchBox">
-		<input type="text" placeholder="메뉴 또는 위치를 입력해보세요!" autofocus>
-		<input type="button" value="검색" onclick="">
+		<input type="text" id="searchInput" name="keyword" placeholder="음식종류(ex:한식) 또는 가게명을 입력해보세요!" autofocus>
+		<input type="button" value="검색하기" onclick="search_SCM('<%=sessionId %>')" id="search_SCM">
 	</div>
 	<div class="foodList">
 		<!-- 로그인 -->
@@ -90,7 +83,7 @@
 					</a>
 				</div>
 				<div class="fl_Box6">
-					<a href="#" onclick="review('<%=user_Id%>')"> <img src="image/kfood.jpg"
+					<a href="#" onclick="review('<%=user_Id%>','<%=sessionId%>')"> <img src="image/kfood.jpg"
 						alt="더보기"> <span class="image-text">리뷰보기</span>
 					</a>
 				</div>
@@ -214,6 +207,45 @@
 					</table>
 				</div>
 			</div>
+			 <% 
+				sql="SELECT * FROM KYJ_SCM ";
+				String keyword = request.getParameter("keyword");
+				if(keyword != null){
+					sql += "WHERE SCM_SHOPNAME LIKE '%" + keyword + "%' OR SCM_TYPE LIKE '%" + keyword + "%'";
+				} else {
+					keyword = "";
+				}
+				rs = stmt.executeQuery(sql);
+				if(keyword != null && !keyword.equals("")){
+			%>
+				<div id="searchSCM" class="foodList_Box2 search" >
+					
+					<table border="1">
+							<span><%=keyword%>의 검색결과 <input type="button" value="닫기" onclick="home('<%=sessionId %>')" style="width: 50px;"></span>
+
+							<tr>
+								<th style="color: black;">NO</th>
+								<th style="color: black;">상호명</th>
+								<th style="color: black;">주소</th>
+							</tr>
+							<%
+								int cnt = 0;
+								while(rs.next()){
+									++cnt;
+							%>
+								<tr>
+									<td><%=cnt%></td>
+									<td><%=rs.getString("SCM_SHOPNAME") %></td>
+									<td><%=rs.getString("USER_ADDRESS") %></td>
+								</tr>
+							<%
+								}
+							%>
+						</table>
+				</div>
+			<%	
+			} 
+			 %>
 		</div>
 	</div>
 
@@ -274,7 +306,36 @@
 		location.href = "924_scm_Review.jsp?user_Id=" + user_Id;
 	}
 	/* 주문 리뷰  */
-	function review(user_Id){
-		location.href = "920_user_Review_List.jsp?user_Id="+user_Id;
+	function user_Review(user_Id){
+		location.href = "928_user_Review_shop.jsp?user_Id="+user_Id;
+	}
+	/* 전체리뷰 보기  */
+	function review(user_Id,sessionId){
+		location.href = "920_user_Review_List.jsp?user_Id="+user_Id+"&sessionId="+sessionId;
+	}
+	
+	/* 검색창  */
+	function search_SCM(user_Id){
+		var searchInput = document.querySelector("#searchInput");
+	    var keyword = searchInput.value;
+	    
+	    // 수정: 검색 결과를 보여주는 div의 ID 사용
+	    var searchSCM = document.querySelector("#searchSCM");
+
+	    // 검색어가 비어있지 않으면 검색 결과를 보여줌
+	    if (keyword.trim() !== "") {
+	        // 검색 결과를 표시하는 페이지로 이동
+	        location.href = "8_scm_login_view.jsp?keyword=" + keyword + "&user_Id="+user_Id;
+	        // 검색 결과를 보여주는 div의 display를 'block'으로 변경
+	        searchSCM.style.display = 'block';
+
+	    } else {
+	        // 검색어가 비어있을 경우, 메시지를 띄우거나 다른 동작을 수행할 수 있음
+	        alert("검색어를 입력하세요.");
+	    }
+
+	}
+	function home(user_Id){
+		location.href = "8_scm_login_view.jsp?user_Id="+user_Id;
 	}
 </script>

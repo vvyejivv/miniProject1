@@ -10,6 +10,7 @@
 <body>
 <%@ include file="dbconn.jsp"%>
 <%
+	String sessionId = (String) session.getAttribute("user_Id");
 	String user_Id = request.getParameter("user_Id");
 	String sql = "SELECT * FROM KYJ_REVIEW WHERE USER_ID='"+ user_Id +"'";
 	String keyword = request.getParameter("keyword");
@@ -47,7 +48,7 @@
 			<tr>
 				<td><%=cnt%></td>
 				<td>
-					<a href="923_user_Review_View.jsp?R_NO=<%=rs.getString("R_NO") %>&user_Id=<%=rs.getString("USER_ID")%>">
+					<a href="923_user_Review_View.jsp?R_NO=<%=rs.getString("R_NO") %>&user_Id=<%=rs.getString("USER_ID")%>&sessionId=<%=sessionId%>">
 						<%=rs.getString("R_TITLE") %>
 					</a>
 				</td>
@@ -62,6 +63,7 @@
 		%>
 		</table>
 	</form>
+	<% conn.close(); %>
 </body>
 </html>
 <script>

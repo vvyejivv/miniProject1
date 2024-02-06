@@ -33,6 +33,9 @@
 					<h2><%=user_Id%>님의 주문내역</h2>
 				</div>
 				<div>
+					<input type="text" name="shopreview" placeholder="가게명을 누르면 리뷰를 입력할 수 있어요!" disabled> 
+				</div>
+				<div>
 					<input type="text" name="shopName" placeholder="가게명을 입력하세요" value=""> 
 						<input type="button" value="검색하기" onclick="search('<%=user_Id%>')">
 						<input type="button" value="전체보기" onclick="allList('<%=user_Id%>')">

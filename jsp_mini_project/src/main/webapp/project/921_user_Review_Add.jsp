@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰 작성 페이지</title>
+<link rel="stylesheet" href="user_Review_Add.css?after" type="text/css" >
 </head>
 <body>
 <%@ include file="dbconn.jsp"%>

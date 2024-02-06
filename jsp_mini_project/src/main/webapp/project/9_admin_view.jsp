@@ -10,6 +10,7 @@
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
+	String sessionId = (String) session.getAttribute("user_Id");
 	String sql = "SELECT * FROM KYJ_USER";
 	String word = request.getParameter("word");
 	String code = request.getParameter("code");
@@ -69,7 +70,7 @@
 				<td><%=rs.getString("USER_ADDRESS")%></td>
 				<td><%=rs.getString("USER_DATE")%></td>
 				<td><%=rs.getString("CODE")%></td>
-				<td><input type="button" onclick="btnR('<%=rs.getString("USER_ID")%>')" value="리뷰"></td>
+				<td><input type="button" onclick="btnR('<%=rs.getString("USER_ID")%>','<%=sessionId %>')" value="리뷰"></td>
 				<td><input type="button" onclick="btnD('<%=rs.getString("USER_ID")%>')" value="삭제"></td>
 				<td>
 				<% 
@@ -87,6 +88,7 @@
 			%>
 		</table>
 	</form>
+<% conn.close(); %>
 </body>
 </html>
 <script>
@@ -99,8 +101,8 @@
 		location.href = "9_admin_view.jsp?code=" + form.code.value;
 	}
 	/* 리뷰  */
-	function btnR(user_Id){
-		location.href="918_admin_User_Review.jsp?user_Id="+user_Id;
+	function btnR(user_Id,sessionId){
+		location.href="918_admin_User_Review.jsp?user_Id="+user_Id+"&sessionId="+sessionId;
 	}
 	/* 정보 삭제  */
 	function btnD(user_Id){
@@ -116,7 +118,7 @@
 	}
 	/* 체크박스 회원 삭제 */
 	function checkD(){
-		if(conform("정말 삭제하시겠습니까?")){
+		if(confirm("정말 삭제하시겠습니까?")){
 			var form = document.user_List;
 			form.action = "919_admin_User_delete.jsp";
 			form.submit();

@@ -210,29 +210,27 @@
 			<% if(keyword != null && !keyword.equals("")){
 			%>
 				<div id="searchSCM" class="foodList_Box2" >
-					
-					<table border="1">
-							<span><%=keyword%>의 검색결과 <input type="button" value="닫기" onclick="home()" style="width: 50px;"></span>
-
+				<table border="1">
+						<span><%=keyword%>의 검색결과</span>
+						<tr>
+							<th style="color: black;">NO</th>
+							<th style="color: black;">상호명</th>
+							<th style="color: black;">주소</th>
+						</tr>
+						<%
+							int cnt = 0;
+							while(rs.next()){
+								++cnt;
+						%>
 							<tr>
-								<th style="color: black;">NO</th>
-								<th style="color: black;">상호명</th>
-								<th style="color: black;">주소</th>
+								<td><%=cnt%></td>
+								<td><%=rs.getString("SCM_SHOPNAME") %></td>
+								<td><%=rs.getString("USER_ADDRESS") %></td>
 							</tr>
-							<%
-								int cnt = 0;
-								while(rs.next()){
-									++cnt;
-							%>
-								<tr>
-									<td><%=cnt%></td>
-									<td><%=rs.getString("SCM_SHOPNAME") %></td>
-									<td><%=rs.getString("USER_ADDRESS") %></td>
-								</tr>
-							<%
-								}
-							%>
-						</table>
+						<%
+							}
+						%>
+					</table>
 				</div>
 			<%	
 			} 
@@ -256,9 +254,6 @@
 	}
 	function review(){
 		location.href="920_user_Review_List.jsp";
-	}
-	function home(){
-		location.href = "1_home.jsp";
 	}
 	/* 검색창  */
 	function search_SCM(){
@@ -305,8 +300,5 @@
 				contentToHide.style.display = 'none';
 			});
 		}
-	}
-	function order(){
-		location.href ="929_order_Add.jsp"
 	}
 </script>
