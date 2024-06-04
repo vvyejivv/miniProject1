@@ -1,5 +1,5 @@
 <div>
-    <img src="https://capsule-render.vercel.app/api?type=shark&color=ff5ea7&height=240&text=미미딜리버리&animation=scaleIn&fontColor=ffffff&fontSize=50" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=200&text=미미딜리버리&animation=scaleIn&fontColor=ff5ea7&fontSize=30" />
 </div>
 <div> 
       <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🖥 프로젝트 소개 </h2>  
